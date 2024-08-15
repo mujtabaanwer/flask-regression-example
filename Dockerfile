@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster
+FROM python:3.10-slim-buster
 
 RUN useradd -m -s /bin/bash --uid 1000 python 
 
@@ -14,5 +14,7 @@ RUN pip install -r requirements.txt
 
 # Train and Generate Model
 RUN python train.py
+
+EXPOSE 5000
 
 CMD ["python","mainapp.py"]
